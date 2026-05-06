@@ -1,0 +1,17 @@
+{
+  "repo": "keystone-trade-slippage-mesh",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 3,
+    "ship": 176,
+    "watch": 125
+  },
+  "terms": [
+    "spread pressure",
+    "fill risk",
+    "portfolio drift",
+    "quote width"
+  ]
+}
