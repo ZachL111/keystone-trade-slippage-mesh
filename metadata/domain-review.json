@@ -1,0 +1,73 @@
+{
+  "repo": "keystone-trade-slippage-mesh",
+  "language": "Zig",
+  "category": "Trading systems",
+  "goal": "Design a Zig verification harness for slippage systems, covering protocol validation, framed sample traffic, and failure-oriented tests.",
+  "review_model": {
+    "terms": [
+      "spread pressure",
+      "fill risk",
+      "portfolio drift",
+      "quote width"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "spread pressure",
+      "signal": 54,
+      "slack": 49,
+      "drag": 28,
+      "confidence": 48,
+      "score": 121,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "fill risk",
+      "signal": 44,
+      "slack": 41,
+      "drag": 14,
+      "confidence": 45,
+      "score": 132,
+      "lane": "watch"
+    },
+    {
+      "name": "edge",
+      "focus": "portfolio drift",
+      "signal": 46,
+      "slack": 21,
+      "drag": 20,
+      "confidence": 57,
+      "score": 110,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "quote width",
+      "signal": 69,
+      "slack": 22,
+      "drag": 30,
+      "confidence": 73,
+      "score": 143,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "spread pressure",
+      "signal": 59,
+      "slack": 35,
+      "drag": 15,
+      "confidence": 89,
+      "score": 197,
+      "lane": "ship"
+    }
+  ]
+}
